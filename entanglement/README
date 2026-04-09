@@ -1,0 +1,29 @@
+## Install Z1+
+
+Z1+ can be downloaded from the official repository: https://github.com/mkmat/Z1plus-code/tree/main.
+
+is available here: https://github.com/mkmat/Z1plus-code/tree/main
+
+To install the program, run:
+
+```perl Z1+install/Z1+install.pl```
+
+Make sure you have Perl installed on your system before running the installer.
+
+
+## Entanglement calculation
+### Step 1: Generate `config.Z1`
+To prepare the input file required by Z1+, convert your LAMMPS trajectory using:
+
+```perl ./Z1+import_lammps.pl -dump="droplet.lammpstraj" - data=droplet.data -ignore_H"```
+
+Explanation of arguments:
+
+-dump → LAMMPS trajectory file (.lammpstraj) \
+-data → LAMMPS data file \
+-ignore_H → excludes hydrogen atoms
+
+### Step 2: Run Z1+
+Once `config.Z1` is generated, run the entanglement analysis:
+
+`./Z1+ config.Z1`
